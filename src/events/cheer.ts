@@ -12,17 +12,17 @@ export default {
     const bits = parseInt(userstate.bits);
     const username = userstate["display-name"] || userstate.username;
 
-    let response = `Vielen Dank für die ${bits} Bits, ${username}! 🎉`;
+    let response = `Nom nom danke für ${bits} Bits, ${username}, wird mein döner geld!`;
 
     switch (true) {
       case bits >= 10000:
-        response = `WOW! Vielen herzlichen Dank für die unglaublichen ${bits} Bits, ${username}! Das ist wirklich großzügig! 🎉🎉🎉`;
+        response = `WOW! DANKE FÜR DIE ${bits} Bits, ${username}! `;
         break;
       case bits >= 5000:
-        response = `Wahnsinn! Vielen Dank für die großzügigen ${bits} Bits, ${username}! 🎉🎉`;
+        response = `YOOO ${bits} Bits, ${username}! `;
         break;
       case bits >= 1000:
-        response = `Fantastisch! Vielen Dank für die tollen ${bits} Bits, ${username}! 🎉`;
+        response = `Dankeee für die ${bits} Bits, ${username}!`;
         break;
     }
 

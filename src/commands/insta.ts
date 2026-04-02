@@ -3,19 +3,20 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const DISCORD_INVITE = "https://discord.gg/tuubaa";
+const INSTA_LINK = "https://www.instagram.com/1tuubaa_/";
 
 export default {
-  name: "discord",
-  description: "Zeigt den Link zum Discord-Server",
-  aliases: ["dc", "community"],
+  name: "instagram",
+  description: "Zeigt den Link zu dem Instagram Kanal",
+  aliases: ["ig", "insta"],
+
   userLevel: "Jeder",
   execute: (channel: string, tags: ChatUserstate, args: string[]) => {
     const username = tags["display-name"] || tags.username;
 
     const channelName = channel.replace("#", "");
 
-    let response = `Den Discord findest du unter: ${DISCORD_INVITE}, ${username}!`;
+    let response = `Hey ${username}! Ihr insta findest du hier: ${INSTA_LINK}`;
 
     return response;
   },

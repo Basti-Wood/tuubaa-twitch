@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const TWITCH_CLIENT_ID = process.env.TWITCH_CLIENT_ID;
+const AUTH_URL = process.env.AUTH_URL
 const TOKENS_FILE = path.join(__dirname, "../../tokens.json");
 
 interface TokenData {
@@ -59,7 +60,7 @@ export default {
     }
 
     if (args.length < 1) {
-      const authUrl = `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=${TWITCH_CLIENT_ID}&redirect_uri=https://s42.site&scope=channel:manage:broadcast&state=${channelName}`;
+      const authUrl = `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=${TWITCH_CLIENT_ID}&redirect_uri=${AUTH_URL}&scope=channel:manage:broadcast&state=${channelName}`;
       return `@${tags["display-name"]} Bitte besuche ${authUrl} und autorisiere die App. Dann nutze: !token DEIN_TOKEN NICHT EMPFOHLEN!!!!! Mach es lieber Manuell`;
     }
 

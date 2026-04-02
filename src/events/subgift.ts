@@ -13,14 +13,7 @@ export default {
     userstate: ChatUserstate,
   ) => {
     const senderDispName = userstate["display-name"] || username;
-    const plan = methods.plan || "1000";
-    let tierName = "Tier 1";
-
-    if (plan === "2000") tierName = "Tier 2";
-    if (plan === "3000") tierName = "Tier 3";
-
-    const response = `${senderDispName} hat ${recipient} ein ${tierName} Sub geschenkt! Vielen Dank für deine Großzügigkeit! 🎁`;
-
-    client.say(channel, response);
+    const gifted = userstate["msg-param-sender-count"] || 1;
+    client.say(channel, `${senderDispName} hat ${recipient} einen Sub geschenkt! (${gifted} insgesamt) Du stinker :)`);
   },
 };

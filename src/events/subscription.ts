@@ -19,11 +19,11 @@ export default {
     const isPrime = methods.prime;
     const subType = isPrime ? "Prime" : tierName;
 
-    let response = `Vielen Dank für dein ${subType} Sub, ${username}! 🎉`;
+    let response = `EYYO ein ${subType} Sub, von ${username}!YAY`;
 
     if (userstate["msg-param-cumulative-months"] > 1) {
       const months = userstate["msg-param-cumulative-months"];
-      response = `Vielen Dank für ${months} Monate Unterstützung mit deinem ${subType} Sub, ${username}! 🎉`;
+      response = `DANKE FÜR ${months} Monate SUPPORT MIT EINEM ${subType} SUB, ${username}! crazzyyyy`;
     }
 
     client.say(channel, response);
